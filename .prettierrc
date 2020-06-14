@@ -8,5 +8,6 @@
   "useTabs": false,
   "htmlWhitespaceSensitivity": "css",
   "vueIndentScriptAndStyle": true,
-  "quoteProps": "preserve"
+  "quoteProps": "preserve",
+  "arrowParens": "avoid"
 }
