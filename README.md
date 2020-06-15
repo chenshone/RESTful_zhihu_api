@@ -34,6 +34,29 @@
         - password: string
     7. 我的关注: get, /:id/following
     8. 我的粉丝: get, /:id/followers
-    9. 关注: put, /following/:id
-    10. 取消关注: delete, /following/:id
+    9. 关注用户: put, /following/:id
+    10. 取消关注用户: delete, /following/:id
+    11. 关注话题: put, /followingTopics/:id
+    12. 取消关注话题: delete, /followingTopics/:id
+    13. 我的关注话题: get, /:id/followingTopics
 2. 上传文件: /upload
+3. 话题: /topics
+   1. 获取话题信息: get, /
+      - query:
+        - per_page?: 每页显示字段数
+        - page?: 当前返回第几页
+        - q?: 关键字
+   2. 获取指定话题信息: get, /:id
+      - query:
+        - fields?: 过滤字段
+   3. 创建新话题: post, /
+      - body:
+         - name: string
+         - avatar_url?: string
+         - introduction?: string
+   4. 更新话题信息: patch, /:id
+      - body:
+        - name?: string
+        - avatar_url?: string
+        - introduction?: string
+   5. 关注该话题的人: get, /:id/followers
