@@ -39,6 +39,7 @@
     11. 关注话题: put, /followingTopics/:id
     12. 取消关注话题: delete, /followingTopics/:id
     13. 我的关注话题: get, /:id/followingTopics
+    14. 我的问题: get, /:id/questions
 2. 上传文件: /upload
 3. 话题: /topics
    1. 获取话题信息: get, /
@@ -60,3 +61,22 @@
         - avatar_url?: string
         - introduction?: string
    5. 关注该话题的人: get, /:id/followers
+   6. 该话题有关的问题: get, /:id/questions
+4. 问题: /questions
+   1. 获取问题信息: get, /
+      - query:
+        - per_page?: 每页显示字段数
+        - page?: 当前返回第几页
+        - q?: 关键字
+   2. 获取指定问题信息: get, /:id
+      - query:
+        - fields?: 过滤字段
+   3. 创建新问题: post, /
+      - body:
+         - title: string
+         - description?: string
+   4. 更新问题信息: patch, /:id
+      - body:
+        - title?: string
+        - description?: string
+   5. 删除该问题: delete, /:id/questions
