@@ -22,10 +22,10 @@ class QuestionsCtl {
       .map(f => '+' + f)
       .join(' ')
 
-    const Question = await Question.findById(ctx.params.id)
+    const question = await Question.findById(ctx.params.id)
       .select(selectFields)
       .populate('questioner topics')
-    ctx.body = Question
+    ctx.body = question
   }
 
   async create(ctx) {
@@ -34,11 +34,11 @@ class QuestionsCtl {
       description: { type: 'string', required: false },
     })
 
-    const Question = new Question({
+    const question = new Question({
       ...ctx.request.body,
       questioner: ctx.state.user._id,
     }).save()
-    ctx.body = Question
+    ctx.body = question
   }
 
   async checkQuestioner(ctx, next) {

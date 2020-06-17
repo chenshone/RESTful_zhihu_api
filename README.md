@@ -40,6 +40,15 @@
     12. 取消关注话题: delete, /followingTopics/:id
     13. 我的关注话题: get, /:id/followingTopics
     14. 我的问题: get, /:id/questions
+    15. 我喜欢的答案: get, /:id/likingAnswers
+    16. 我喜欢(这个答案): put, /likingAnswers/:id
+    17. 取消我喜欢(这个答案): delete, /likingAnswers/:id
+    18. 我不喜欢的答案: get, /:id/dislikingAnswers
+    19. 我不喜欢(这个答案): put, /dislikingAnswers/:id
+    20. 取消我不喜欢(这个答案): delete, /dislikingAnswers/:id
+    21. 我收藏的答案: get, /:id/collectingAnswers
+    22. 我收藏(这个答案): put, /collectingAnswers/:id
+    23. 取消我收藏(这个答案): delete, /collectingAnswers/:id
 2. 上传文件: /upload
 3. 话题: /topics
    1. 获取话题信息: get, /
@@ -80,3 +89,21 @@
         - title?: string
         - description?: string
    5. 删除该问题: delete, /:id/questions
+5. 答案: /questions/:questionId/answers
+   1. 获取答案信息: get, /
+         - query:
+           - per_page?: 每页显示字段数
+           - page?: 当前返回第几页
+           - q?: 关键字
+   2. 获取指定答案信息: get, /:id
+      - query:
+        - fields?: 过滤字段
+   3. 创建新答案: post, /
+      - body:
+         - title: string
+         - description?: string
+   4. 更新答案信息: patch, /:id
+      - body:
+        - title?: string
+        - description?: string
+   5. 删除该答案: delete, /:id/questions
