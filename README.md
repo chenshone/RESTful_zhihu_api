@@ -88,7 +88,7 @@
       - body:
         - title?: string
         - description?: string
-   5. 删除该问题: delete, /:id/questions
+   5. 删除该问题: delete, /:id
 5. 答案: /questions/:questionId/answers
    1. 获取答案信息: get, /
          - query:
@@ -106,4 +106,22 @@
       - body:
         - title?: string
         - description?: string
-   5. 删除该答案: delete, /:id/questions
+   5. 删除该答案: delete, /:id
+6. 评论: /questions/:questionId/answers/:answerId/comments
+   1. 获取评论信息: get, /
+         - query:
+           - per_page?: 每页显示字段数
+           - page?: 当前返回第几页
+           - q?: 关键字
+   2. 获取指定评论信息: get, /:id
+      - query:
+        - fields?: 过滤字段
+   3. 创建新评论: post, /
+      - body:
+         - title: string
+         - description?: string
+   4. 更新评论信息: patch, /:id
+      - body:
+        - title?: string
+        - description?: string
+   5. 删除该评论: delete, /:id
